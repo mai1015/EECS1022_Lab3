@@ -108,14 +108,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/spinnerPTwo"
-        android:layout_alignEnd="@+id/spinnerPTwo"/>
+        android:layout_alignEnd="@+id/spinnerPTwo"
+        android:onClick="buttonConfirm"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Result"
-        android:id="@+id/textResult"
+        android:id="@+id/labelResult"
         android:layout_below="@+id/buttonComfirm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

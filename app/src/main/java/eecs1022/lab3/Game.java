@@ -45,8 +45,12 @@ public class Game {
                 win2++;
                 return String.format("%s\n%s wins", ret, player2);
             default:
-                return "Game Drawn";
+                return String.format("%s\nGame Drawn", ret, player2);
         }
+    }
+
+    public String newTrun(String p1, String p2) {
+        return newTrun(RPSGame.valueOf(p1), RPSGame.valueOf(p2));
     }
 
     public int getTrun() {

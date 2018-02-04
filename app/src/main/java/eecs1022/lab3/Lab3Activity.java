@@ -46,11 +46,16 @@ public class Lab3Activity extends AppCompatActivity
         // validate the model, update when changed
         if (g == null) {
             g = new Game(p1, p2);
-        } else if (!g.getPlayer1().equals(p1) && !g.getPlayer2().equals(p2)) {
+        } else if (!g.getPlayer1().equals(p1) || !g.getPlayer2().equals(p2)) {
             g = new Game(p1, p2);
         }
 
         // deal with data
+        p1 = getItemSelectedById(R.id.spinnerPone);
+        p2 = getItemSelectedById(R.id.spinnerPTwo);
+
+        setTextViewById(R.id.labelResult, g.newTrun(p1,p2));
+        setTextViewById(R.id.labelRound, String.format("Round %d", g.getTrun()));
     }
 
     public void onInputChanged(View v) {
