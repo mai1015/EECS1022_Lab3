@@ -77,7 +77,9 @@
         android:layout_below="@+id/labelPlayerOneMove"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:entries="@array/rps"/>
+        android:entries="@array/rps"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -97,7 +99,9 @@
         android:layout_below="@+id/labelPlayerTwoMove"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:entries="@array/rps"/>
+        android:entries="@array/rps"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -107,9 +111,9 @@
         android:layout_below="@+id/spinnerPTwo"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/spinnerPTwo"
-        android:layout_alignEnd="@+id/spinnerPTwo"
-        android:onClick="buttonConfirm"/>
+        android:onClick="buttonConfirm"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -120,7 +124,7 @@
         android:layout_below="@+id/buttonComfirm"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/buttonComfirm"
-        android:layout_alignEnd="@+id/buttonComfirm"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
