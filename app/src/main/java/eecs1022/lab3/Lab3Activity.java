@@ -54,8 +54,14 @@ public class Lab3Activity extends AppCompatActivity
         p1 = getItemSelectedById(R.id.spinnerPone);
         p2 = getItemSelectedById(R.id.spinnerPTwo);
 
-        setTextViewById(R.id.labelResult, g.newTrun(p1,p2));
-        setTextViewById(R.id.labelRound, String.format("Round %d", g.getTrun()));
+        if (g.getTrun() > 4) {
+            setTextViewById(R.id.labelResult, g.toString());
+            setTextViewById(R.id.labelRound, String.format("Round %d", 1));
+            g = null;
+        } else {
+            setTextViewById(R.id.labelResult, g.newTrun(p1,p2));
+            setTextViewById(R.id.labelRound, String.format("Round %d", g.getTrun()));
+        }
     }
 
     public void onInputChanged(View v) {
