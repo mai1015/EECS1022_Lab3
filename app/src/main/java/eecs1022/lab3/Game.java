@@ -33,7 +33,7 @@ public class Game {
     }
 
     public String newTrun(RPSGame p1, RPSGame p2) {
-        String ret = String.format("%s plays: %s, %s plays: %s",
+        String ret = String.format("%s plays: %s, \n%s plays: %s",
                 player1, p1, player2, p2);
 
         turn++;
