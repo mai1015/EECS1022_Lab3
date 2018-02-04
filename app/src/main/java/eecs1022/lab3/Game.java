@@ -71,7 +71,8 @@ public class Game {
 
     @Override
     public String toString() {
-        return String.format("%s wins %d(%.2f%%), %s wins %d(%.2f%%)",
+        return String.format("Total round %d, \n%s wins %d(%.2f%%), \n%s wins %d(%.2f%%)",
+                turn,
                 player1, win1, 100.0 * win1/(turn),
                 player2, win2, 100.0 * win2/(turn));
     }
