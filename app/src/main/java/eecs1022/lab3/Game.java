@@ -24,6 +24,14 @@ public class Game {
         player2 = p2;
     }
 
+    public String getPlayer1() {
+        return player1;
+    }
+
+    public String getPlayer2() {
+        return player2;
+    }
+
     public String newTrun(RPSGame p1, RPSGame p2) {
         String ret = String.format("%s plays: %s, %s plays: %s",
                 player1, p1, player2, p2);

@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class Lab3Activity extends AppCompatActivity
 {
 
-    private Game g = new Game();
+    private Game g;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,26 +37,23 @@ public class Lab3Activity extends AppCompatActivity
         return spinner.getSelectedItem().toString();
     }
 
-    private String getPlayerInfo() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.playerInfo);
-
-        final EditText input = new EditText(this);
-
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
-
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-        builder.show();
-        return "";
-    }
-
     public void buttonConfirm(View v) {
         // It will be a mess and do not study it.
+        // Get player Input
+        String p1 = getInputById(R.id.inputPOne);
+        String p2 = getInputById(R.id.inputPTwo);
+
+        // validate the model, update when changed
+        if (g == null) {
+            g = new Game(p1, p2);
+        } else if (!g.getPlayer1().equals(p1) && !g.getPlayer2().equals(p2)) {
+            g = new Game(p1, p2);
+        }
+
+        // deal with data
+    }
+
+    public void onInputChanged(View v) {
+        // change when button updated
     }
 }
