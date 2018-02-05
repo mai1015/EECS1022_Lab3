@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">lab3</string>
-    <string name="playerInfo">Type your name:</string>
     <string-array name="rps">
         <item>Rock</item>
         <item>Paper</item>

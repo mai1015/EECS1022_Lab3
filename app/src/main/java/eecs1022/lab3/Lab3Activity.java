@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -27,6 +28,11 @@ public class Lab3Activity extends AppCompatActivity
         view.setText(text);
     }
 
+    private void setButtonText(int ID, String t) {
+        Button b = (Button) findViewById(ID);
+        b.setText(t);
+    }
+
     private String getInputById(int ID) {
         EditText view = (EditText) findViewById(ID);
         return view.getText().toString();
@@ -46,25 +52,31 @@ public class Lab3Activity extends AppCompatActivity
         // validate the model, update when changed
         if (g == null) {
             g = new Game(p1, p2);
-        } else if (!g.getPlayer1().equals(p1) || !g.getPlayer2().equals(p2)) {
-            g = new Game(p1, p2);
         }
 
         // deal with data
         p1 = getItemSelectedById(R.id.spinnerPone);
         p2 = getItemSelectedById(R.id.spinnerPTwo);
+        // run the new turn
+        String result = g.newTrun(p1,p2);
 
-        if (g.getTrun() > 4) {
+        // showing result
+        if (g.isOver()) {
             setTextViewById(R.id.labelResult, g.toString());
             setTextViewById(R.id.labelRound, String.format("Round %d", 1));
-            g = null;
         } else {
-            setTextViewById(R.id.labelResult, g.newTrun(p1,p2));
-            setTextViewById(R.id.labelRound, String.format("Round %d", g.getTrun()));
+            setTextViewById(R.id.labelResult, result);
+            setTextViewById(R.id.labelRound, String.format("Round %d", g.getTrun()+1));
         }
     }
 
     public void onInputChanged(View v) {
-        // change when button updated
+        // When player update the name, it means change player.
+        // renew game
+        g = null;
+
+        // initialize output
+        setTextViewById(R.id.labelRound, "Round 1");
+        setTextViewById(R.id.labelResult, "New game created. Enter names of player");
     }
 }
