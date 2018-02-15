@@ -36,7 +36,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:minWidth="100dp"
-        android:onClick="onInputChanged"/>
+        android:onClick="onCreateNewGame"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -46,7 +46,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:minWidth="100dp"
-        android:onClick="onInputChanged"/>
+        android:onClick="onCreateNewGame"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -129,4 +129,16 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textAlignment="center"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start A New Game"
+        android:id="@+id/buttonStart"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/labelResult"
+        android:layout_alignEnd="@+id/labelResult"
+        android:onClick="onCreateNewGame"/>
 </RelativeLayout>

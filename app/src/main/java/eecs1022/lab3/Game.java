@@ -45,16 +45,29 @@ public class Game {
         String ret = String.format("Round %d finished, %s plays: %s, \n%s plays: %s",
                 turn, player1, p1, player2, p2);
 
-        switch (run(p1, p2)) {
+        GameStatus status = run(p1, p2);
+        switch (status) {
             case Win:
                 win1++;
-                return String.format("%s\n%s wins", ret, player1);
+                return getResult(ret);//isOver() ? getResult(ret) : String.format("%s\n%s wins", ret, player1);
             case Lose:
                 win2++;
-                return String.format("%s\n%s wins", ret, player2);
+                return getResult(ret);//isOver() ? getResult(ret) : String.format("%s\n%s wins", ret, player2);
             default:
-                return String.format("%s\nGame Drawn", ret, player2);
+                return getResult(ret);//isOver() ? getResult(ret) : String.format("%s\nGame Drawn", ret);
         }
+    }
+
+    public String getResult(String pre) {
+        String ret = null;
+        if (win1 > win2) {
+            ret = String.format("%s\nWinner is %s.", pre, player1) ;
+        } else if (win1 < win2) {
+            ret = String.format("%s\nWinner is %s.", pre, player2) ;
+        } else {
+            ret = String.format("%s\nGame drawen.", pre) ;
+        }
+        return isOver() ? String.format("%s\n%s", ret, "Game is over") : ret;
     }
 
     public boolean isOver() {

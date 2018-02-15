@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">lab3</string>
+    <string name="app_name">EECS 1022 W18 Lab3:R-P-S Game</string>
     <string-array name="rps">
         <item>Rock</item>
         <item>Paper</item>
