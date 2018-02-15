@@ -53,6 +53,11 @@ public class Lab3Activity extends AppCompatActivity
         if (g == null) {
             g = new Game(p1, p2);
         }
+        if (g.isOver()) {
+            setTextViewById(R.id.labelResult, g.toString());
+            setTextViewById(R.id.labelRound, "Round 1");
+            return;
+        }
 
         // deal with data
         p1 = getItemSelectedById(R.id.spinnerPone);
@@ -61,13 +66,8 @@ public class Lab3Activity extends AppCompatActivity
         String result = g.newTrun(p1,p2);
 
         // showing result
-        if (g.isOver()) {
-            setTextViewById(R.id.labelResult, g.toString());
-            setTextViewById(R.id.labelRound, String.format("Round %d", 1));
-        } else {
-            setTextViewById(R.id.labelResult, result);
-            setTextViewById(R.id.labelRound, String.format("Round %d", g.getTrun()+1));
-        }
+        setTextViewById(R.id.labelResult, result);
+        setTextViewById(R.id.labelRound, String.format("Round %d", g.getTrun()+1));
     }
 
     public void onInputChanged(View v) {
